@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "879709ed-67b7-45a6-a934-7f5a2275c619",
+		"name": "TINNOVA - VEICULOS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26661668"
+	},
+	"item": [
+		{
+			"name": "Adiciona Veiculo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"veiculo\":\"CAMARO\",\r\n    \"marca\":\"CHEVROLET\",\r\n    \"ano\":2010,\r\n    \"descricao\":\"CARRO\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tinnova/api/veiculos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tinnova",
+						"api",
+						"veiculos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualiza Veiculo",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descricao\":\"CARRO\",\r\n    \"vendido\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tinnova/api/veiculos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tinnova",
+						"api",
+						"veiculos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Altera Veiculo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"veiculo\":\"CAMARO-vendido\",\r\n    \"marca\":\"CHEVROLET-vendido\",\r\n    \"ano\":2008,\r\n    \"descricao\":\"CARRO-vendido\",\r\n    \"vendido\":\"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tinnova/api/veiculos/0b4d11e3-c31b-446e-9c89-84c7885864b8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tinnova",
+						"api",
+						"veiculos",
+						"0b4d11e3-c31b-446e-9c89-84c7885864b8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca todos Veiculos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"veiculo\":\"moto\",\r\n    \"marca\":\"honda\",\r\n    \"ano\":2008,\r\n    \"descricao\":\"biz\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tinnova/api/veiculos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tinnova",
+						"api",
+						"veiculos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca veiculo por id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"veiculo\":\"moto\",\r\n    \"marca\":\"honda\",\r\n    \"ano\":2008,\r\n    \"descricao\":\"biz\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tinnova/api/veiculos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tinnova",
+						"api",
+						"veiculos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleta veiculo por id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"veiculo\":\"moto\",\r\n    \"marca\":\"honda\",\r\n    \"ano\":2008,\r\n    \"descricao\":\"biz\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tinnova/api/veiculos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tinnova",
+						"api",
+						"veiculos",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
