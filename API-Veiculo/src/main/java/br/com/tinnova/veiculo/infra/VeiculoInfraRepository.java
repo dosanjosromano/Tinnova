@@ -1,5 +1,7 @@
 package br.com.tinnova.veiculo.infra;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import br.com.tinnova.domain.Veiculo;
@@ -20,5 +22,13 @@ public class VeiculoInfraRepository implements VeiculoRepository {
 		veiculoSpringDataJPARepository.save(veiculo);
 		log.info("[finaliza] VeiculoInfraRepository - salva");
 		return veiculo;
+	}
+
+	@Override
+	public List<Veiculo> buscaTodosVeiculos() {
+		log.info("[inicia] VeiculoInfraRepository - buscaTodosVeiculos");
+		List<Veiculo> todosVeiculos = veiculoSpringDataJPARepository.findAll();
+		log.info("[finaliza] VeiculoInfraRepository - buscaTodosVeiculos");
+		return todosVeiculos;
 	}
 }
