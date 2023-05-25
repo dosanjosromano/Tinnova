@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -40,4 +41,9 @@ public interface VeiculoAPI {
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	void pathAtualizaVeiculo(@PathVariable UUID idVeiculo,
 			@Valid @RequestBody VeiculoAlteracaoRequest veiculoAlteracaoRequest);
+	
+	@PutMapping(value = "/{idVeiculo}")
+	@ResponseStatus(code = HttpStatus.NO_CONTENT)
+	void putAlteraVeiculoCompleto(@PathVariable UUID idVeiculo,
+			@Valid @RequestBody VeiculoAlteradoRequest veiculoAlteracaoCompletaRequest);
 }

@@ -57,6 +57,16 @@ public class VeiculoRestController implements VeiculoAPI {
 		veiculoService.pathAtualizaVeiculo(idVeiculo, veiculoAlteracaoRequest);
 		log.info("[finaliza]VeiculoController -  pathAtualizaVeiculo");
 	}
+	
+	@Override
+	public void putAlteraVeiculoCompleto(UUID idVeiculo,
+			@Valid VeiculoAlteradoRequest veiculoAlteracaoCompletaRequest) {
+		log.info("[inicia]VeiculoController - putAlteraVeiculoCompleto");
+		log.info("[idVeiculo] {}", idVeiculo);
+		veiculoService.putAlteraVeiculoCompleto(idVeiculo, veiculoAlteracaoCompletaRequest);
+		log.info("[finaliza]VeiculoController -  putAlteraVeiculoCompleto");
+		
+	}
 
 	
 }
