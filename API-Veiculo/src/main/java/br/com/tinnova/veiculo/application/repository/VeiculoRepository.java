@@ -13,4 +13,6 @@ public interface VeiculoRepository {
 
 	Veiculo buscaVeiculoId(UUID idVeiculo);
 
+	void deletaVeiculo(Veiculo veiculo);
+
 }

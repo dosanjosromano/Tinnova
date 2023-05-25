@@ -16,4 +16,6 @@ public interface VeiculoService {
 
 	VeiculoDetalhadoResponse buscaVeiculoId(UUID idVeiculo);
 
+	void deletaVeiculoId(UUID idVeiculo);
+
 }
