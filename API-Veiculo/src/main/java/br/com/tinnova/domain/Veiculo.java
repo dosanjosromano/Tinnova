@@ -47,7 +47,6 @@ public class Veiculo {
 		this.ano = veiculoRequest.getAno();
 		this.descricao = veiculoRequest.getDescricao();
 		this.vendido = false;
-
 		this.created = LocalDateTime.now();
 	}
 
@@ -64,6 +63,5 @@ public class Veiculo {
 		this.descricao = veiculoRequest.getDescricao();
 		this.vendido = false;
 		this.update = LocalDateTime.now();
-		
 	}
 }

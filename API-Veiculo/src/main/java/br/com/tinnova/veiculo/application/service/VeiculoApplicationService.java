@@ -64,7 +64,6 @@ public class VeiculoApplicationService implements VeiculoService {
 		veiculo.atualiza(veiculoAlteracaoRequest);
 		veiculoRepository.salva(veiculo);
 		log.info("[finaliza] VeiculoApplicationService - pathAtualizaVeiculo ");
-		
 	}
 
 	@Override
@@ -74,6 +73,5 @@ public class VeiculoApplicationService implements VeiculoService {
 		veiculo.alteraCompleto(veiculoAlteracaoCompletaRequest);
 		veiculoRepository.salva(veiculo);
 		log.info("[finaliza] VeiculoApplicationService - putAlteraVeiculoCompleto ");
-		
 	}
 }

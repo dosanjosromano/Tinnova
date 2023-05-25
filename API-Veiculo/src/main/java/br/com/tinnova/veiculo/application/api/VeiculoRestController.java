@@ -47,7 +47,6 @@ public class VeiculoRestController implements VeiculoAPI {
 		log.info("[inicia]VeiculoController - deletaVeiculoAtravesId");
 		veiculoService.deletaVeiculoId(idVeiculo);
 		log.info("[finaliza]VeiculoController -  deletaVeiculoAtravesId");
-		
 	}
 
 	@Override
@@ -65,8 +64,5 @@ public class VeiculoRestController implements VeiculoAPI {
 		log.info("[idVeiculo] {}", idVeiculo);
 		veiculoService.putAlteraVeiculoCompleto(idVeiculo, veiculoAlteracaoCompletaRequest);
 		log.info("[finaliza]VeiculoController -  putAlteraVeiculoCompleto");
-		
 	}
-
-	
 }
