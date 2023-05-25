@@ -1,6 +1,7 @@
 package br.com.tinnova.veiculo.application.api;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,6 +30,15 @@ public class VeiculoRestController implements VeiculoAPI {
 		List<VeiculoListResponse> veiculos = veiculoService.buscaTodosVeiculos();
 		log.info("[finaliza]VeiculoController -  getTodosVeiculos");
 		return veiculos;
+	}
+
+	@Override
+	public VeiculoDetalhadoResponse getVeiculoAtravesId(UUID idVeiculo) {
+		log.info("[inicia]VeiculoController - getVeiculoAtravesId");
+		log.info("[idVeiculo] {}", idVeiculo);
+		VeiculoDetalhadoResponse veiculoDetalhado = veiculoService.buscaVeiculoId(idVeiculo);
+		log.info("[finaliza]VeiculoController - getVeiculoAtravesId");
+		return veiculoDetalhado;
 	}
 
 	

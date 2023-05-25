@@ -1,10 +1,12 @@
 package br.com.tinnova.veiculo.application.service;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
 import br.com.tinnova.domain.Veiculo;
+import br.com.tinnova.veiculo.application.api.VeiculoDetalhadoResponse;
 import br.com.tinnova.veiculo.application.api.VeiculoListResponse;
 import br.com.tinnova.veiculo.application.api.VeiculoRequest;
 import br.com.tinnova.veiculo.application.api.VeiculoResponse;
@@ -35,6 +37,14 @@ public class VeiculoApplicationService implements VeiculoService {
 		List<Veiculo> veiculos = veiculoRepository.buscaTodosVeiculos();
 		log.info("[finaliza] VeiculoApplicationService - buscaTodosVeiculos ");
 		return VeiculoListResponse.converte(veiculos);
+	}
+
+	@Override
+	public VeiculoDetalhadoResponse buscaVeiculoId(UUID idVeiculo) {
+		log.info("[inicia] VeiculoApplicationService - buscaVeiculoId ");
+		Veiculo veiculo = veiculoRepository.buscaVeiculoId(idVeiculo);
+		log.info("[finaliza] VeiculoApplicationService - buscaVeiculoId ");
+		return new VeiculoDetalhadoResponse(veiculo);
 	}
 
 }
