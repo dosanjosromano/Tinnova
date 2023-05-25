@@ -3,6 +3,7 @@ package br.com.tinnova.domain;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import br.com.tinnova.veiculo.application.api.VeiculoAlteracaoRequest;
 import br.com.tinnova.veiculo.application.api.VeiculoRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -46,5 +47,11 @@ public class Veiculo {
 		this.vendido = false;
 
 		this.created = LocalDateTime.now();
+	}
+
+	public void atualiza(VeiculoAlteracaoRequest veiculoRequest) {
+		this.descricao = veiculoRequest.getDescricao();
+		this.vendido = veiculoRequest.getVendido();
+		this.update = LocalDateTime.now();
 	}
 }

@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.tinnova.veiculo.application.service.VeiculoService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -47,6 +48,14 @@ public class VeiculoRestController implements VeiculoAPI {
 		veiculoService.deletaVeiculoId(idVeiculo);
 		log.info("[finaliza]VeiculoController -  deletaVeiculoAtravesId");
 		
+	}
+
+	@Override
+	public void pathAtualizaVeiculo(UUID idVeiculo, @Valid VeiculoAlteracaoRequest veiculoAlteracaoRequest) {
+		log.info("[inicia]VeiculoController - pathAtualizaVeiculo");
+		log.info("[idVeiculo] {}", idVeiculo);
+		veiculoService.pathAtualizaVeiculo(idVeiculo, veiculoAlteracaoRequest);
+		log.info("[finaliza]VeiculoController -  pathAtualizaVeiculo");
 	}
 
 	
